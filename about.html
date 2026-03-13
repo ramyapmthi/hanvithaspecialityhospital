@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Hanvitha Speciality Hospital - Committed to Advanced Care & Patient Safety in Sullurupeta.">
+    <title>About Us | Hanvitha Speciality Hospital</title>
+    <!-- Font Awesome for modern line icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Specific About Page Ultra-Premium Styles */
+        
+        /* Breadcrumb Overlay */
+        .breadcrumb {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        .breadcrumb span {
+            margin: 0 10px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Hospital Story - Clean Spacious Layout */
+        .story-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+        .story-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(11, 31, 58, 0.12);
+        }
+        .story-image-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            min-height: 500px;
+            display: block;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 30px rgba(11, 31, 58, 0.1);
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .story-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+        .story-content h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        .story-content p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        /* Mission & Vision Glassmorphism Cards */
+        .mission-vision-section {
+            padding: 120px 0;
+            background: linear-gradient(145deg, var(--bg-light) 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        .mv-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 1);
+            padding: 60px 50px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.05);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        .mv-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(11, 31, 58, 0.08);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .mv-icon {
+            font-size: 3.8rem;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        .mission-icon { color: var(--secondary-color); }
+        .vision-icon { color: var(--primary-color); }
+        .mv-card h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .mv-card p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* Why Patients Trust Us */
+        .trust-features-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .feature-item {
+            padding: 45px 35px;
+            border-radius: var(--radius-lg);
+            background: var(--bg-light);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+            text-align: center;
+        }
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.05), rgba(11, 31, 58, 0.02));
+            z-index: -1;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .feature-item:hover {
+            border-color: rgba(13, 148, 136, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11,31,58,0.06);
+        }
+        .feature-item:hover::before {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: color 0.4s ease, transform 0.4s ease;
+        }
+        .feature-item:hover .feature-icon {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+        .feature-item h4 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0; /* Removing desc, keeping it clean */
+            font-weight: 600;
+        }
+
+        /* Doctor Experience Section */
+        .doctor-experience-section {
+            padding: 120px 0;
+            background: #f8fafc;
+        }
+        .experience-cards-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 60px;
+        }
+        .exp-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(11, 31, 58, 0.06);
+            border-top: 6px solid var(--secondary-color);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .exp-card:hover {
+            transform: translateY(-5px);
+        }
+        .exp-card:nth-child(2) {
+            border-top-color: var(--primary-color);
+        }
+        .exp-header {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .exp-header h3 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        .exp-header p {
+            font-size: 1.15rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        .exp-card:nth-child(2) .exp-header p {
+            color: var(--primary-color);
+        }
+        .exp-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .exp-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        .exp-list li:last-child {
+            margin-bottom: 0;
+        }
+        .exp-list li::before {
+            content: '\f058';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+        }
+        .exp-card:nth-child(2) .exp-list li::before {
+            color: var(--primary-color);
+        }
+
+        /* Emergency Trust Banner */
+        .emergency-trust-banner {
+            padding: 140px 0;
+            background: linear-gradient(rgba(11, 31, 58, 0.88), rgba(11, 31, 58, 0.95)), url('https://images.unsplash.com/photo-1551076805-e1869043e560?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .emergency-trust-banner h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .btn-banner {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 20px 55px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-decoration: none;
+            box-shadow: 0 15px 30px rgba(239, 68, 68, 0.3);
+        }
+        .btn-banner:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(239, 68, 68, 0.4);
+            background-color: #dc2626;
+        }
+
+        /* Mini Testimonial Strip */
+        .testimonial-strip {
+            background: var(--secondary-color);
+            color: white;
+            padding: 16px 0;
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .testimonial-track {
+            display: inline-block;
+            animation: scroll-left 40s linear infinite;
+        }
+        /* Duplicate content for seamless infinite scrolling */
+        .testimonial-track.delay {
+            animation: scroll-left2 40s linear infinite;
+        }
+        .testimonial-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 80px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .testimonial-item i.fa-star {
+            color: #fbbf24;
+            margin-right: 4px;
+        }
+        .testimonial-item i.fa-quote-left {
+            margin-right: 12px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .story-grid, .mv-grid, .experience-cards-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .story-section, .mission-vision-section, .trust-features-section, .doctor-experience-section {
+                padding: 80px 0;
+            }
+            .story-content h2 { font-size: 2.2rem; }
+            .mv-card { padding: 40px 30px; }
+            .emergency-trust-banner { padding: 100px 0; }
+            .emergency-trust-banner h2 { font-size: 2.5rem; }
+            .exp-card { padding: 40px 30px; }
+            .feature-item { padding: 35px 25px; }
+        }
+        @media (max-width: 768px) {
+            .story-image-wrapper img { min-height: 350px; }
+            .emergency-trust-banner h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fa-solid fa-location-dot"></i> Nagarajapuram, Sullurupeta</span>
+                <span><i class="fa-solid fa-clock"></i> Open 24 Hours</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fa-solid fa-phone"></i> Emergency: +91 83329 45014</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-staff-snake"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Hanvitha</h1>
+                    <p>SPECIALITY HOSPITAL</p>
+                </div>
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li class="dropdown">
+                    <a href="index.html#specialities">Specialities <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="orthopedics.html">Orthopedic Surgery</a></li>
+                        <li><a href="gynecology.html">Gynecology</a></li>
+                        <li><a href="obstetrics.html">Obstetrics</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#doctors">Our Specialists</a></li>
+                <li><a href="index.html#reviews">Reviews</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li>
+                    <a href="tel:+918332945014" class="btn btn-emergency" style="padding: 10px 24px; font-size: 0.95rem;">
+                        <i class="fa-solid fa-phone-volume"></i> 24/7 Emergency
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. PREMIUM HERO BANNER -->
+    <section class="subpage-hero" style="background: linear-gradient(to right, rgba(11, 31, 58, 0.92), rgba(13, 148, 136, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover; padding: 150px 0 120px 0;">
+        <div class="container fade-in-section" style="text-align: center;">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span><i class="fa-solid fa-chevron-right"></i></span> About Us
+            </div>
+            <h1 style="font-size: 3.5rem; letter-spacing: -0.5px; margin-bottom: 20px;">Committed to Advanced Care & Patient Safety</h1>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">Trusted Emergency, Orthopedic and Women Healthcare Centre in Sullurupeta</p>
+        </div>
+    </section>
+
+
+    <!-- 2. HOSPITAL STORY SECTION -->
+    <section class="story-section fade-in-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" alt="Premium Hospital Facility" style="width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(11, 31, 58, 0.1); object-fit: cover;" onerror="this.outerHTML='<div style=\'width: 100%; min-height: 500px; background: #f8fafc; border-radius: var(--radius-lg); display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 30px rgba(11, 31, 58, 0.1);\'><i class=\'fa-solid fa-truck-medical\' style=\'font-size: 6rem; color: #0D9488;\'></i></div>'">
+                </div>
+                <div class="story-content">
+                    <h2>Modern Infrastructure. <br>Compassionate Hearts.</h2>
+                    <p>
+                        <strong>Hanvitha Speciality Hospital</strong> is a patient-focused multi-speciality healthcare centre delivering modern orthopedic surgery, spine care, gynecology, and maternity services to Sullurupeta and surrounding regions.
+                    </p>
+                    <p>
+                        Our hospital combines advanced medical expertise with compassionate care to ensure every single patient feels safe, respected, and completely confident during their treatment journey.
+                    </p>
+                    <p>
+                        We are recognized across the community specifically for our rapid emergency response, highly accurate diagnostic capabilities, and personalized, ethical treatment plans.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MISSION & VISION PREMIUM CARDS -->
+    <section class="mission-vision-section fade-in-section">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon mission-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To deliver accessible, ethical, and advanced healthcare with deep compassion. We are dedicated to restoring health using evidence-based medical science and modern technology.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon vision-icon"><i class="fa-regular fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To become the most trusted emergency and speciality hospital in the region, recognized relentlessly for impeccable patient safety, fast recovery rates, and comprehensive care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WHY PATIENTS TRUST US -->
+    <section class="trust-features-section fade-in-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Why Patients Trust Us</h2>
+                <p>The core values and robust facilities that ensure a safe medical environment.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fa-solid fa-truck-medical feature-icon"></i>
+                    <h4>24/7 Emergency Response</h4>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-user-doctor feature-icon"></i>
+                    <h4>Experienced Specialist Doctors</h4>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-bone feature-icon"></i>
+                    <h4>Advanced Orthopedic & Spine Care</h4>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-person-breastfeeding feature-icon"></i>
+                    <h4>Safe Women & Maternity Services</h4>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-hospital feature-icon"></i>
+                    <h4>Patient Friendly Environment</h4>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-file-invoice-dollar feature-icon"></i>
+                    <h4>Affordable Treatment</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DOCTOR EXPERIENCE HIGHLIGHT SECTION -->
+    <section class="doctor-experience-section fade-in-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Specialist Leadership</h2>
+                <p>Decades of rigorous clinical excellence dedicated to your recovery.</p>
+            </div>
+            
+            <div class="experience-cards-wrapper">
+                <!-- Dr Hariprakash -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h3>Dr. Hariprakash Lokka</h3>
+                        <p>Consultant Orthopedic Surgeon</p>
+                    </div>
+                    <ul class="exp-list">
+                        <li>DNB Orthopedics (Mumbai)</li>
+                        <li>Fellowship in Spine Surgery & Rheumatology</li>
+                        <li>Ex Consultant Apollo Hospitals</li>
+                        <li>Expert in Trauma & Joint Treatments</li>
+                    </ul>
+                </div>
+
+                <!-- Dr Tejaswini -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h3>Dr. Tejaswini</h3>
+                        <p>Consultant Gynecologist & Obstetrician</p>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Specialist in Gynecology & Obstetrics Care</li>
+                        <li>High-Risk Pregnancy Management Expert</li>
+                        <li>PCOS & PCOD Treatment Authority</li>
+                        <li>Known for compassionate maternity support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. EMERGENCY TRUST BANNER -->
+    <section class="emergency-trust-banner fade-in-section">
+        <div class="container">
+            <h2>24/7 Emergency Orthopedic & Maternity Care Available</h2>
+            <a href="tel:+918332945014" class="btn-banner">
+                <i class="fa-solid fa-phone-volume" style="font-size: 1.4rem;"></i> Call Emergency Now
+            </a>
+        </div>
+    </section>
+
+    <!-- 7. MINI TESTIMONIAL STRIP -->
+    <div class="testimonial-strip">
+        <div class="testimonial-track">
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                "Excellent orthopedic treatment and highly professional setup." - Suresh K.
+            </div>
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                "Maternity care here is so safe and assuring. Highly recommend Dr. Tejaswini." - Aarti V.
+            </div>
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                "Best 24/7 emergency service in Sullurupeta." - Ramesh K.
+            </div>
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                "Modern trauma care. Very clean and safe environment." - Priya P.
+            </div>
+        </div>
+        <!-- Duplicated track for smooth infinite loop -->
+        <div class="testimonial-track delay">
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                "Excellent orthopedic treatment and highly professional setup." - Suresh K.
+            </div>
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                "Maternity care here is so safe and assuring. Highly recommend Dr. Tejaswini." - Aarti V.
+            </div>
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                "Best 24/7 emergency service in Sullurupeta." - Ramesh K.
+            </div>
+            <div class="testimonial-item">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                "Modern trauma care. Very clean and safe environment." - Priya P.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 0;">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Column 1: Hospital Logo Short Description -->
+                <div class="footer-brand">
+                    <div class="logo-icon" style="border-radius: var(--radius-sm); display: inline-flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #0B1F3A, #0D9488); font-size: 2rem; color: white;">
+                        <i class="fa-solid fa-staff-snake"></i>
+                    </div>
+                    <h2>Hanvitha Speciality Hospital</h2>
+                    <p class="footer-desc" style="max-width: 300px;">A premium modern healthcare facility in Sullurupeta offering Metro-level expertise in Orthopedics, Spine Care, Gynecology, and Maternity Services.</p>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#specialities">Specialities</a></li>
+                        <li><a href="index.html#reviews">Reviews</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Specialities Links -->
+                <div>
+                    <h4 class="footer-heading">Specialities Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="orthopedics.html">Orthopedic</a></li>
+                        <li><a href="gynecology.html">Gynecology</a></li>
+                        <li><a href="obstetrics.html">Obstetrics</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact Info -->
+                <div>
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-phone" style="color: var(--secondary-color); margin-right: 8px;"></i> <a href="tel:+918332945014" style="display:inline-block;">+91 83329 45014</a></li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px;"><i class="fa-solid fa-location-dot" style="color: var(--secondary-color); margin-top: 5px;"></i> <span>Nagarajapuram, Sullurupeta</span></li>
+                        <li><i class="fa-solid fa-clock" style="color: var(--secondary-color); margin-right: 8px;"></i> Open 24 Hours</li>
+                    </ul>
+                    <div style="display: flex; gap: 15px; margin-top: 25px;">
+                        <a href="#" style="background: rgba(255,255,255,0.1); width: 42px; height: 42px; display: flex; justify-content: center; align-items: center; border-radius: 50%; transition: all 0.3s; color: white;"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="background: rgba(255,255,255,0.1); width: 42px; height: 42px; display: flex; justify-content: center; align-items: center; border-radius: 50%; transition: all 0.3s; color: white;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="background: rgba(255,255,255,0.1); width: 42px; height: 42px; display: flex; justify-content: center; align-items: center; border-radius: 50%; transition: all 0.3s; color: white;"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Hanvitha Speciality Hospital. Designed for High Quality Patient Care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/918332945014?text=Hello%20Hanvitha%20Hospital,%20I%20have%20an%20inquiry." class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
