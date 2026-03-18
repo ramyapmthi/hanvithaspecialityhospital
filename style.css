@@ -301,18 +301,17 @@ footer { background-color: var(--primary-color); color: rgba(255,255,255,0.7); p
 }
 
 /* Header Brand Name Branding */
+.logo { display: flex; align-items: center; gap: 10px !important; }
+
 .header-brand-name {
     color: var(--primary-color);
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.25rem;
-    line-height: 1.2;
-    max-width: 300px;
+    line-height: 1.1;
 }
 @media (max-width: 768px) {
-    .logo { gap: 10px; }
     .header-brand-name {
         font-size: 1.05rem;
-        max-width: 140px;
     }
 }
