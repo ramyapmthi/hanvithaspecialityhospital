@@ -299,3 +299,20 @@ footer { background-color: var(--primary-color); color: rgba(255,255,255,0.7); p
     .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
     .testimonial-card { min-width: 300px; }
 }
+
+/* Header Brand Name Branding */
+.header-brand-name {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    max-width: 300px;
+}
+@media (max-width: 768px) {
+    .logo { gap: 10px; }
+    .header-brand-name {
+        font-size: 1.05rem;
+        max-width: 140px;
+    }
+}
